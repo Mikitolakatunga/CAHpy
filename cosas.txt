@@ -1,0 +1,5 @@
+tamaño de las cartas
+
+61x95 mm // 230x359 px
+
+61x80 mm // 230x302 px
