@@ -43,23 +43,9 @@ def draw_text(text, size, bg):
     lines = text_wrap(text, font, image_size[0])
     print(lines) # ['This could be a single line text ', 'but its too long to fit in one. ']
 
+def write_text(img, text, font, color):
 
-def get_line_height(ft):
-
-    line_height = font.getsize('hg')[1]
-
-    return line_height
-
-if __name__ == '__main__':
-
-    font = ImageFont.truetype('arial.ttf', 25)
-    text = "This could be a single line text but its too long to fit in one."
-    color = "black"
-
-    img = Image.open("white_card.png")
-    image_size = img.size
-
-    lines = text_wrap(text, font, image_size[0])
+    lines = text_wrap(text, font, img.size[0])
     line_height = get_line_height(font)
     draw = ImageDraw.Draw(img)
 
@@ -70,4 +56,38 @@ if __name__ == '__main__':
         print(line)
         draw.text((x, y), line, fill=color, font=font)
         y = y + line_height
-    img.save('white_card_mline.png', optimize=True)
+
+    return img
+
+
+
+def get_line_height(ft):
+
+    line_height = ft.getsize('hg')[1]
+
+    return line_height
+
+if __name__ == '__main__':
+
+    # font = ImageFont.truetype('arial.ttf', 25)
+    text = "This could be a single line text but its too long to fit in one."
+    # color = "black"
+    #
+    # img = Image.open("white_card.png")
+    # image_size = img.size
+    #
+    # lines = text_wrap(text, font, image_size[0])
+    # line_height = get_line_height(font)
+    # draw = ImageDraw.Draw(img)
+    #
+    # x = 10
+    # y = 20
+    #
+    # for line in lines:
+    #     print(line)
+    #     draw.text((x, y), line, fill=color, font=font)
+    #     y = y + line_height
+    img = Image.open("white_card.png")
+    font = ImageFont.truetype('arial.ttf', 25)
+    card = write_text(img, text, font, "black")
+    card.save('white_card_mline.png', optimize=True)

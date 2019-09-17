@@ -46,19 +46,19 @@ def add_bottom_logo(img):
 
     return img
 
-def create_white(size, rad, bg, text, bottom_t):
+def create_white(size, bottom_t):
 
-    img = create_card(size, bg, text, bottom_t)
-    img = add_black_corners(img, rad)
+    img = create_card(size, 'white', 'black', bottom_t)
+    img = add_black_corners(img, 20)
     img = add_bottom_logo(img)
 
     # img.save('white_card.png')
     return img
 
-def create_black(size, rad, bg, text, bottom_t):
+def create_black(size, bottom_t):
 
-    img = create_card(size, bg, text, bottom_t)
-    img = add_corners(img, rad)
+    img = create_card(size, 'black', 'white', bottom_t)
+    img = add_corners(img, 20)
     img = add_bottom_logo(img)
 
     # img.save('black_card.png')
@@ -73,8 +73,8 @@ if __name__ == '__main__':
     # black = 0
     # rad = 20
 
-    black_c = create_black(size, 20, "black", "white", bottom_t)
-    white_c = create_white(size, 20, "white", "black", bottom_t)
+    black_c = create_black(size, bottom_t)
+    white_c = create_white(size, bottom_t)
 
     black_c.save('black_card.png')
     white_c.save('white_card.png')
