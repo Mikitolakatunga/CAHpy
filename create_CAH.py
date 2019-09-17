@@ -1,4 +1,4 @@
-from create_white_card import *
+from create_card import *
 from draw_mtext import *
 
 
@@ -19,7 +19,7 @@ def generate_CAH_cards(text, type):
             img = create_black(size, bottom_t)
             color = 'white'
         card = write_text(img, line, font, color)
-        card.save("C:/SPB_Data/github/CAHpy/Example_Cards/" + line.rstrip() + '.png', optimize=True)
+        card.save("D:/PyProjects/CAHpy/Example_Cards/" + line.rstrip() + '.png', optimize=True)
 
 if __name__ == '__main__':
-    generate_CAH_cards("Random_words.txt", 'black')
+    generate_CAH_cards("Random_words.txt", 'white')

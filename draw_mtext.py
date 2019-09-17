@@ -43,14 +43,14 @@ def draw_text(text, size, bg):
     lines = text_wrap(text, font, image_size[0])
     print(lines) # ['This could be a single line text ', 'but its too long to fit in one. ']
 
-def write_text(img, text, font, color):
+def write_text(x, y, img, text, font, color):
 
     lines = text_wrap(text, font, img.size[0])
     line_height = get_line_height(font)
     draw = ImageDraw.Draw(img)
 
-    x = 10
-    y = 20
+    # x = 10
+    # y = 20
 
     for line in lines:
         print(line)
@@ -89,5 +89,5 @@ if __name__ == '__main__':
     #     y = y + line_height
     img = Image.open("white_card.png")
     font = ImageFont.truetype('arial.ttf', 25)
-    card = write_text(img, text, font, "black")
+    card = write_text(10, 20, img, text, font, "black")
     card.save('white_card_mline.png', optimize=True)
