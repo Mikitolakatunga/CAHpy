@@ -50,15 +50,13 @@ def get_line_height(ft):
 
     return line_height
 
-
-
 if __name__ == '__main__':
 
     font = ImageFont.truetype('arial.ttf', 25)
     text = "This could be a single line text but its too long to fit in one."
-    color = (255, 255, 255)
+    color = "black"
 
-    img = Image.open("black_card.png")
+    img = Image.open("white_card.png")
     image_size = img.size
 
     lines = text_wrap(text, font, image_size[0])
@@ -69,6 +67,7 @@ if __name__ == '__main__':
     y = 20
 
     for line in lines:
+        print(line)
         draw.text((x, y), line, fill=color, font=font)
         y = y + line_height
-    img.save('black_card_mline.png', optimize=True)
+    img.save('white_card_mline.png', optimize=True)
