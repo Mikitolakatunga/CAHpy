@@ -4,4 +4,6 @@ tamaño de las cartas
 
 61x80 mm // 230x302 px
 
+61x70mm // 230x261 px
+
 esta en github desde hoy
