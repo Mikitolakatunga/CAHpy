@@ -27,4 +27,5 @@ def generate_CAH_cards(text, type):
         print(name + ' saved')
 
 if __name__ == '__main__':
-    generate_CAH_cards("Random_words.txt", 'white')
+    generate_CAH_cards("CARTAS_BLANCAS.txt", 'white')
+    print("FINISHED!!")
