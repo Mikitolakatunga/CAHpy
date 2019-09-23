@@ -1,10 +1,13 @@
 from PIL import Image
 import glob
+import os
+import sys
 
 #opens an image:
-im = Image.open("D:/PyProjects/CAHpy/Back_Cards/black_back.png")
-dir = "D:/PyProjects/CAHpy/Example_Cards/"
-images = glob.iglob(dir + '*.png')
+dir = os.getcwd()
+im = Image.open(dir + "/Back_Cards/black_back.png")
+type = sys.argv[1]
+images = glob.iglob(f"{dir}/{type}_cards/*.png")
 # for x in images:
 #     print(x)
 
@@ -26,7 +29,7 @@ try:
                 print(str(i) + "\t"+ str(j) + "\t" + image)
                 card = Image.open(image)
                 new_page.paste(card, (i,j))
-                new_page.save("D:/PyProjects/CAHpy/Merged_Cards/Merged_page"+str(page)+".png")
+                new_page.save(f"{dir}/{type}_cards/Merged_page/{str(page)}.png")
         # new_page.show()
         print(f"Page {str(page)} saved")
         page += 1

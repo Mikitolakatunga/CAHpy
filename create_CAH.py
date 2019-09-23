@@ -1,12 +1,12 @@
 from create_card import *
 from draw_mtext import *
-
+import sys
+import os
 
 size = (230, 261)
 bottom_t = 'Cards Against Humanity'
 font = ImageFont.truetype('consolab.ttf', 25)
-dir = "D:/PyProjects/CAHpy/Example_Cards/"
-
+dir = os.getcwd()
 
 def generate_CAH_cards(text, type):
 
@@ -22,10 +22,12 @@ def generate_CAH_cards(text, type):
         card = write_text(10, 20, img, line, font, color)
         name = line.rstrip() + '.png'
         name = name.replace(' ', '_')
-        card.save(dir + name, optimize=True)
+        card.save(f"{dir}/{type}_cards/{name}", optimize=True)
 
         print(name + ' saved')
 
 if __name__ == '__main__':
-    generate_CAH_cards("CARTAS_BLANCAS.txt", 'white')
+    txt = sys.argv[1]
+    type = sys.argv[2]
+    generate_CAH_cards(txt, type)
     print("FINISHED!!")
