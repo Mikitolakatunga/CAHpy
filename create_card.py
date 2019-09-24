@@ -37,10 +37,10 @@ def add_bottom_logo(img, txtc, bottom_t):
 
     fnt = ImageFont.truetype('consola.ttf', 15)
     d = ImageDraw.Draw(img)
-    d.text((40,234), bottom_t, font=fnt, fill=txtc)
+    d.text((40,237), bottom_t, font=fnt, fill=txtc)
 
-    offset = (5, 229)
-    logo = Image.open('Logo.png')
+    offset = (5, 227)
+    logo = Image.open('Logo2.png')
     logo.thumbnail((30,30))
     img.paste(logo, offset, mask=logo)
 
@@ -49,7 +49,7 @@ def add_bottom_logo(img, txtc, bottom_t):
 def create_white(size, bottom_t):
 
     img = create_card(size, 'white', 'black')
-    img = add_black_corners(img, 20)
+    # img = add_black_corners(img, 20)
     img = add_bottom_logo(img, 'black', bottom_t)
 
     # img.save('white_card.png')
@@ -58,7 +58,7 @@ def create_white(size, bottom_t):
 def create_black(size, bottom_t):
 
     img = create_card(size, 'black', 'white')
-    img = add_corners(img, 20)
+    # img = add_corners(img, 20)
     img = add_bottom_logo(img, 'white', bottom_t)
 
     # img.save('black_card.png')
