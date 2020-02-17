@@ -169,11 +169,11 @@ if __name__ == '__main__':
     dir = os.getcwd()
 
     # doc = 'CARTAS_BLANCAS.txt'
-    doc = 'CARTAS_NEGRAS.txt'
-    # doc = 'EUITI_blancas.txt'
+    # doc = 'CARTAS_NEGRAS.txt'
+    doc = 'EUITI_blancas.txt'
     # doc = 'EUITI_negras.txt'
 
-    type = 'black'
+    type = 'white'
     Path(f"{dir}/{type}_cards").mkdir(parents=True, exist_ok=True)
 
     RobotoMono_Light = 'C:/Users/mikit/AppData/Local/Microsoft/Windows/Fonts/RobotoMono-Light.ttf'
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     btext = 'Cards Against Humanity'
     size = (737, 1020)
     borde = 2
-    logo = 'Logo3.png'
-    # logo = 'Logo4.png'
+    # logo = 'Logo3.png'
+    logo = 'Logo4.png'
 
     generate_CAH_cards(doc, type)
