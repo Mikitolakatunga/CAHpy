@@ -1,0 +1,23 @@
+
+Sub SetImagesTo145mmWidth()
+    '
+    ' SetImagesTo145mmWidth Macro
+    '
+    '
+    Dim inlinePicture As InlineShape
+    Dim maxSize As Integer
+
+    maxSize = 65.2   ' In mm
+
+    ' Convert mm to points
+    ' 1 Centimeter = 28.3464567 points
+    maxSize = maxSize * 2.83464567
+
+    For Each inlinePicture In ActiveDocument.InlineShapes
+        inlinePicture.LockAspectRatio = msoTrue
+        inlinePicture.ScaleWidth = 100
+        If inlinePicture.Width > maxSize Then
+            inlinePicture.Width = maxSize
+        End If
+    Next
+End Sub
