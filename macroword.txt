@@ -1,5 +1,5 @@
 
-Sub SetImagesTo145mmWidth()
+Sub SetImagesTo65mmWidth()
     '
     ' SetImagesTo145mmWidth Macro
     '
@@ -7,7 +7,7 @@ Sub SetImagesTo145mmWidth()
     Dim inlinePicture As InlineShape
     Dim maxSize As Integer
 
-    maxSize = 65.2   ' In mm
+    maxSize = 65   ' In mm
 
     ' Convert mm to points
     ' 1 Centimeter = 28.3464567 points
