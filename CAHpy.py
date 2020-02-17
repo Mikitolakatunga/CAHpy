@@ -170,10 +170,10 @@ if __name__ == '__main__':
 
     # doc = 'CARTAS_BLANCAS.txt'
     # doc = 'CARTAS_NEGRAS.txt'
-    doc = 'EUITI_blancas.txt'
-    # doc = 'EUITI_negras.txt'
+    # doc = 'EUITI_blancas.txt'
+    doc = 'EUITI_negras.txt'
 
-    type = 'white'
+    type = 'black'
     Path(f"{dir}/{type}_cards").mkdir(parents=True, exist_ok=True)
 
     RobotoMono_Light = 'C:/Users/mikit/AppData/Local/Microsoft/Windows/Fonts/RobotoMono-Light.ttf'
